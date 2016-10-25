@@ -33,7 +33,7 @@ class StdOutListener(tweepy.StreamListener):
                             "geo": {
                                 "lat" : coordinates[1],
                                 "lon" : coordinates[0]
-                            }
+                            },
                             "time" : timestamp}
                 es.index(index = 'twittmap', doc_type='tweets',id = tweet['id'], body=twitter)
                 f.write(twitter)
@@ -60,8 +60,6 @@ if __name__ == '__main__':
         stream.filter(track=['Kobe', 'James', 'NBA', 'Lakers', 'Boston', 'New York', 'Curry', 'Cartoon', 'News', 'Car'])
 
     
-
-
 
 
 
